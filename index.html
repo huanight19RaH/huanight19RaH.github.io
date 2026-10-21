@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Nguyễn Thái Hưng — AI Engineer &amp; Computer Vision Researcher</title>
+  <meta name="description" content="Portfolio of Nguyen Thai Hung — 3rd-year AI student at FPT University Da Nang, Vice President of FU-DEVER Technology Club." />
+  <link rel="icon" href="assets/avatar.png" type="image/png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            barcaBlue: '#004D98',
+            barcaGarnet: '#A50044',
+            barcaGold: '#EDBB00',
+            darkBg: '#080E1E',
+            cardBg: '#0E172E',
+            cardBorder: '#1A294C',
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Fira Code"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #080E1E; }
+    ::-webkit-scrollbar-thumb { background: #1A294C; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #004D98; }
+
+    .glow-blue {
+      background: radial-gradient(circle at 50% 50%, rgba(0, 77, 152, 0.22) 0%, transparent 60%);
+    }
+    .glow-garnet {
+      background: radial-gradient(circle at 50% 50%, rgba(165, 0, 68, 0.20) 0%, transparent 60%);
+    }
+
+    .text-blaugrana {
+      background: linear-gradient(135deg, #004D98 0%, #A50044 55%, #EDBB00 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .glass {
+      background: rgba(14, 23, 46, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(0, 77, 152, 0.25);
+    }
+    .glass-card {
+      background: rgba(14, 23, 46, 0.72);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(0, 77, 152, 0.2);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card:hover {
+      border-color: rgba(237, 187, 0, 0.5);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px -10px rgba(0, 77, 152, 0.35);
+    }
+  </style>
+</head>
+
+<body class="bg-darkBg text-gray-200 font-sans antialiased selection:bg-barcaGarnet selection:text-white relative overflow-x-hidden min-h-screen">
+
+  <div class="fixed top-[-10%] left-[-10%] w-[550px] h-[550px] rounded-full glow-blue pointer-events-none z-0"></div>
+  <div class="fixed bottom-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full glow-garnet pointer-events-none z-0"></div>
+
+  <!-- ==================== NAVIGATION BAR ==================== -->
+  <header class="sticky top-0 z-50 glass border-b border-barcaBlue/30 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-barcaBlue via-barcaGarnet to-barcaGold p-[2px] shadow-lg shadow-barcaBlue/30">
+          <div class="w-full h-full bg-darkBg rounded-[10px] flex items-center justify-center text-barcaGold font-mono font-bold text-sm group-hover:bg-transparent transition-all">
+            TH
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-bold tracking-tight text-white group-hover:text-barcaGold transition-colors" data-i18n="header_name">Nguyễn Thái Hưng</span>
+          <span class="text-[10px] font-mono text-gray-400" data-i18n="nav_role">AI Engineer • FU-DEVER Vice President</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="#about" class="text-gray-300 hover:text-barcaGold transition-colors" data-i18n="nav_about">Về bản thân</a>
+        <a href="#awards" class="text-gray-300 hover:text-barcaGold transition-colors" data-i18n="nav_awards">Giải thưởng</a>
+        <a href="#skills" class="text-gray-300 hover:text-barcaGold transition-colors" data-i18n="nav_skills">Kỹ năng</a>
+        <a href="#projects" class="text-gray-300 hover:text-barcaGold transition-colors" data-i18n="nav_projects">Dự án &amp; Nghiên cứu</a>
+        <a href="#stats" class="text-gray-300 hover:text-barcaGold transition-colors" data-i18n="nav_stats">Thống kê</a>
+        <a href="#connect" class="text-gray-300 hover:text-barcaGold transition-colors" data-i18n="nav_connect">Liên hệ</a>
+      </nav>
+
+      <div class="hidden md:flex items-center gap-3">
+        <!-- Language Switcher Pill Button -->
+        <div class="inline-flex rounded-lg p-1 bg-cardBg border border-barcaBlue/50 text-xs font-mono">
+          <button id="lang-vi-btn" onclick="setLanguage('vi')" class="px-2.5 py-1 rounded font-semibold transition-all bg-barcaBlue text-white shadow">
+            VI
+          </button>
+          <button id="lang-en-btn" onclick="setLanguage('en')" class="px-2.5 py-1 rounded font-semibold transition-all text-gray-400 hover:text-white">
+            EN
+          </button>
+        </div>
+
+        <a href="assets/Nguyen_Thai_Hung_CV.pdf" target="_blank" class="px-3.5 py-2 text-xs font-mono font-semibold rounded-lg bg-barcaGarnet/30 hover:bg-barcaGarnet/50 text-red-200 border border-barcaGarnet/60 flex items-center gap-2 transition-all">
+          <i class="fa-regular fa-file-pdf text-barcaGold"></i>
+          <span data-i18n="nav_cv_btn">Xem CV (PDF)</span>
+        </a>
+        <a href="https://github.com/huanight19RaH" target="_blank" class="px-3.5 py-2 text-xs font-mono font-semibold rounded-lg bg-barcaBlue/30 hover:bg-barcaBlue/50 text-blue-200 border border-barcaBlue/60 flex items-center gap-2 transition-all">
+          <i class="fa-brands fa-github text-sm"></i>
+          <span>GitHub</span>
+        </a>
+      </div>
+
+      <div class="flex items-center gap-2 md:hidden">
+        <!-- Mobile Language Toggle -->
+        <button id="mobile-lang-btn" onclick="toggleLanguage()" class="px-2.5 py-1 text-xs font-mono rounded bg-cardBg border border-barcaBlue/50 text-barcaGold font-semibold">
+          VI
+        </button>
+        <button id="mobile-toggle" class="text-gray-400 hover:text-white p-2 focus:outline-none">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-5 bg-cardBg/95 border-b border-barcaBlue/40 space-y-3">
+      <a href="#about" class="block py-2 text-gray-300 hover:text-barcaGold" data-i18n="nav_about">Về bản thân</a>
+      <a href="#awards" class="block py-2 text-gray-300 hover:text-barcaGold" data-i18n="nav_awards">Giải thưởng</a>
+      <a href="#skills" class="block py-2 text-gray-300 hover:text-barcaGold" data-i18n="nav_skills">Kỹ năng</a>
+      <a href="#projects" class="block py-2 text-gray-300 hover:text-barcaGold" data-i18n="nav_projects">Dự án &amp; Nghiên cứu</a>
+      <a href="#stats" class="block py-2 text-gray-300 hover:text-barcaGold" data-i18n="nav_stats">Thống kê</a>
+      <a href="#connect" class="block py-2 text-gray-300 hover:text-barcaGold" data-i18n="nav_connect">Liên hệ</a>
+      <div class="pt-3 flex gap-2">
+        <a href="assets/Nguyen_Thai_Hung_CV.pdf" target="_blank" class="flex-1 py-2 text-center text-xs font-semibold bg-barcaGarnet text-white rounded" data-i18n="hero_download_cv">Tải CV (PDF)</a>
+        <a href="https://github.com/huanight19RaH" target="_blank" class="flex-1 py-2 text-center text-xs font-mono bg-barcaBlue text-white rounded">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-24 relative z-10">
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="home" class="pt-6 pb-12 flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
+      <div class="w-full lg:w-3/5 space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-barcaBlue/20 border border-barcaBlue/50 text-xs text-blue-300 font-mono">
+          <span class="w-2 h-2 rounded-full bg-barcaGold animate-pulse"></span>
+          <span data-i18n="hero_status">Open for AI Engineering &amp; Research Opportunities</span>
+        </div>
+
+        <div class="space-y-3">
+          <h2 class="text-sm font-mono text-barcaGold tracking-wider uppercase font-semibold" data-i18n="hero_greeting">
+            Xin chào, mình là
+          </h2>
+          <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white" data-i18n="hero_name">
+            Nguyễn Thái Hưng
+          </h1>
+          <div class="h-10 text-lg sm:text-2xl font-mono font-medium text-gray-300 flex items-center">
+            <span class="text-barcaGarnet mr-2">&gt;</span>
+            <span id="typing-text" class="text-white"></span>
+            <span class="w-2 h-5 ml-1 bg-barcaGold animate-pulse"></span>
+          </div>
+        </div>
+
+        <p class="text-gray-300 text-sm sm:text-base leading-relaxed" data-i18n="hero_desc">
+          Sinh viên năm 3 chuyên ngành Trí tuệ Nhân tạo tại Đại học FPT Đà Nẵng, Phó Chủ nhiệm CLB Công nghệ FU-DEVER. Đam mê nghiên cứu Computer Vision, mô hình phục hồi ảnh kết hợp Prior vật lý, và xây dựng hệ thống Machine Learning thực tế.
+        </p>
+
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a href="#projects" class="px-5 py-3 rounded-xl bg-gradient-to-r from-barcaBlue to-barcaGarnet text-white font-semibold text-xs sm:text-sm shadow-lg shadow-barcaBlue/30 hover:opacity-95 transition-all flex items-center gap-2">
+            <i class="fa-solid fa-flask"></i>
+            <span data-i18n="hero_view_projects">Khám phá Dự án &amp; Nghiên cứu</span>
+          </a>
+          <a href="assets/Nguyen_Thai_Hung_CV.pdf" target="_blank" class="px-5 py-3 rounded-xl bg-cardBg hover:bg-gray-800 text-gray-200 border border-barcaBlue/40 font-semibold text-xs sm:text-sm transition-all flex items-center gap-2">
+            <i class="fa-regular fa-file-pdf text-barcaGold"></i>
+            <span data-i18n="hero_download_cv">Tải CV (PDF)</span>
+          </a>
+          <a href="#connect" class="px-5 py-3 rounded-xl bg-barcaGold/10 hover:bg-barcaGold/20 text-barcaGold border border-barcaGold/40 font-semibold text-xs sm:text-sm transition-all flex items-center gap-2">
+            <i class="fa-regular fa-paper-plane"></i>
+            <span data-i18n="hero_contact">Liên hệ</span>
+          </a>
+        </div>
+
+        <div class="pt-4 flex items-center gap-6 text-gray-400 text-lg">
+          <a href="https://github.com/huanight19RaH" target="_blank" class="hover:text-barcaGold transition-colors" title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/thai-hung-nguyen-000b24356/" target="_blank" class="hover:text-barcaGold transition-colors" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://leetcode.com/u/HungNguyen192/" target="_blank" class="hover:text-barcaGold transition-colors" title="LeetCode"><i class="fa-solid fa-code"></i></a>
+          <a href="mailto:hungnguyen.190206@gmail.com" class="hover:text-barcaGold transition-colors" title="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://www.facebook.com/thaihung.0219" target="_blank" class="hover:text-barcaGold transition-colors" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+
+      <div class="w-full lg:w-2/5 flex justify-center">
+        <div class="relative group">
+          <div class="absolute -inset-1.5 bg-gradient-to-tr from-barcaBlue via-barcaGarnet to-barcaGold rounded-3xl blur opacity-60 group-hover:opacity-100 transition duration-500"></div>
+          <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-2xl overflow-hidden bg-cardBg border-2 border-barcaGarnet/60 shadow-2xl">
+            <img src="assets/avatar.png" alt="Nguyễn Thái Hưng" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-darkBg/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3 text-center">
+              <span class="text-xs font-mono font-medium text-barcaGold tracking-wide" data-i18n="hero_card_tag">Nguyễn Thái Hưng • FPTU Đà Nẵng</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PHILOSOPHY / QUOTE BANNER ==================== -->
+    <section class="glass-card p-6 sm:p-8 rounded-2xl relative overflow-hidden border-l-4 border-l-barcaGold shadow-xl">
+      <div class="absolute -right-6 -bottom-6 text-barcaBlue/10 text-8xl font-serif pointer-events-none select-none">
+        <i class="fa-solid fa-quote-right"></i>
+      </div>
+      <div class="relative z-10 max-w-4xl mx-auto text-center space-y-3">
+        <i class="fa-solid fa-quote-left text-barcaGold text-xl opacity-80"></i>
+        <blockquote class="text-base sm:text-lg italic font-light text-gray-200 leading-relaxed" data-i18n="quote_text">
+          "Đối với tương lai, nhiệm vụ của chúng ta không phải là ngồi đoán định, mà là đánh thức và mở lối để nó có thể thành hình."
+        </blockquote>
+        <div class="pt-1">
+          <cite class="not-italic text-xs font-mono font-semibold text-barcaGold" data-i18n="quote_author">
+            — Antoine de Saint-Exupéry, <i>Citadelle</i> (1948)
+          </cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section id="about" class="space-y-8">
+      <div class="flex items-center gap-3 border-b border-barcaBlue/30 pb-4">
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white"><span data-i18n="about_title_1">Về Bản Thân</span> — <span class="text-blaugrana">About Me</span></h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2 glass-card p-6 sm:p-8 rounded-2xl space-y-6">
+          <p class="text-gray-300 leading-relaxed text-sm sm:text-base" data-i18n="about_p1">
+            Mình là sinh viên năm 3 chuyên ngành <b>Trí tuệ nhân tạo (AI)</b> tại <b>Đại học FPT Đà Nẵng</b>, đồng thời đảm nhiệm vị trí <b>Phó Chủ nhiệm Câu lạc bộ Công nghệ FU-DEVER</b>. Mình định hướng trở thành một <b>AI Engineer / AI Researcher</b> với trọng tâm kết hợp giữa chiều sâu nghiên cứu lý thuyết toán học/vật lý và kỹ năng kiến trúc phần mềm thực tiễn.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+            <div class="p-4 rounded-xl bg-cardBg/80 border border-barcaBlue/30 space-y-1">
+              <span class="text-2xl font-bold text-barcaGold font-mono">02</span>
+              <p class="text-xs text-gray-400 font-medium" data-i18n="stat_papers">Accepted Conference Papers</p>
+            </div>
+            <div class="p-4 rounded-xl bg-cardBg/80 border border-barcaBlue/30 space-y-1">
+              <span class="text-2xl font-bold text-blue-400 font-mono">IELTS 6.0</span>
+              <p class="text-xs text-gray-400 font-medium" data-i18n="stat_ielts">English Proficiency (2024)</p>
+            </div>
+            <div class="p-4 rounded-xl bg-cardBg/80 border border-barcaBlue/30 space-y-1">
+              <span class="text-2xl font-bold text-rose-400 font-mono">Vice Pres.</span>
+              <p class="text-xs text-gray-400 font-medium" data-i18n="stat_fudever">FU-DEVER Tech Club</p>
+            </div>
+          </div>
+
+          <div class="space-y-3 pt-2">
+            <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-cardBg/80 border border-barcaBlue/30">
+              <div class="w-9 h-9 rounded-lg bg-barcaGarnet/30 text-rose-400 flex items-center justify-center shrink-0 mt-0.5">
+                <i class="fa-solid fa-microscope text-base"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-white" data-i18n="about_item1_title">Học tập &amp; Nghiên cứu Khoa học</h4>
+                <p class="text-xs text-gray-400 mt-1 leading-relaxed" data-i18n="about_item1_desc">
+                  Nghiên cứu chuyên sâu về Underwater Image Restoration, Low-Light Image Enhancement (LLIE) và Physics-Informed Deep Learning. Đã có 2 bài báo khoa học chính thức được accepted tại các hội nghị khoa học uy tín với kết quả benchmark thực tế và mã nguồn tái lập rõ ràng.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-cardBg/80 border border-barcaBlue/30">
+              <div class="w-9 h-9 rounded-lg bg-barcaBlue/30 text-blue-400 flex items-center justify-center shrink-0 mt-0.5">
+                <i class="fa-solid fa-users-gear text-base"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-white" data-i18n="about_item2_title">Lãnh đạo &amp; Hoạt động Xã hội</h4>
+                <p class="text-xs text-gray-400 mt-1 leading-relaxed" data-i18n="about_item2_desc">
+                  Đảm nhiệm cương vị Phó Chủ nhiệm CLB FU-DEVER — đồng hành điều hành các hoạt động học thuật, chuỗi workshop, hackathon công nghệ; đồng thời là Media Lead dự án thiện nguyện Bật Nụ Cười Lên (Sunshine Team) hỗ trợ các em nhỏ tại Làng Hy Vọng Đà Nẵng.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-cardBg/80 border border-barcaBlue/30">
+              <div class="w-9 h-9 rounded-lg bg-barcaGold/20 text-barcaGold flex items-center justify-center shrink-0 mt-0.5">
+                <i class="fa-solid fa-futbol text-base"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-white" data-i18n="about_item3_title">Sở thích &amp; Đời sống</h4>
+                <p class="text-xs text-gray-400 mt-1 leading-relaxed" data-i18n="about_item3_desc">
+                  Fan trung thành của FC Barcelona; đam mê bóng đá, bơi lội, đọc sách, nghe nhạc và chơi game rèn luyện tư duy; đạt chứng chỉ năng lực ngoại ngữ IELTS 6.0 (2024).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card p-6 sm:p-8 rounded-2xl space-y-6 flex flex-col justify-between">
+          <div class="space-y-4">
+            <h3 class="text-sm font-mono uppercase tracking-wider text-barcaGold flex items-center gap-2">
+              <i class="fa-solid fa-id-badge"></i>
+              <span data-i18n="profile_summary_title">Hồ sơ tóm tắt</span>
+            </h3>
+
+            <div class="space-y-3 text-xs">
+              <div class="flex justify-between py-2 border-b border-barcaBlue/20">
+                <span class="text-gray-400" data-i18n="prof_fullname_label">Họ &amp; Tên:</span>
+                <span class="font-medium text-white" data-i18n="prof_fullname_val">Nguyễn Thái Hưng</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-barcaBlue/20">
+                <span class="text-gray-400" data-i18n="prof_role_label">Vị trí:</span>
+                <span class="font-medium text-blue-300" data-i18n="prof_role_val">Sinh viên năm 3 (AI)</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-barcaBlue/20">
+                <span class="text-gray-400" data-i18n="prof_univ_label">Trường:</span>
+                <span class="font-medium text-white" data-i18n="prof_univ_val">Đại học FPT Đà Nẵng</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-barcaBlue/20">
+                <span class="text-gray-400" data-i18n="prof_club_label">Vai trò CLB:</span>
+                <span class="font-medium text-rose-400" data-i18n="prof_club_val">Phó Chủ nhiệm FU-DEVER</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-barcaBlue/20">
+                <span class="text-gray-400" data-i18n="prof_papers_label">Nghiên cứu:</span>
+                <span class="font-medium text-barcaGold" data-i18n="prof_papers_val">2 Accepted Papers</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-barcaBlue/20">
+                <span class="text-gray-400" data-i18n="prof_lang_label">Ngoại ngữ:</span>
+                <span class="font-medium text-white">Tiếng Việt • English (IELTS 6.0)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-barcaBlue/20">
+            <a href="assets/Nguyen_Thai_Hung_CV.pdf" target="_blank" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-barcaBlue to-barcaGarnet text-white text-xs font-semibold flex items-center justify-center gap-2 shadow-md shadow-barcaBlue/30 hover:opacity-95 transition-all">
+              <i class="fa-solid fa-download text-barcaGold"></i>
+              <span data-i18n="hero_download_cv">Tải CV Bản Đầy Đủ (PDF)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== HONORS & AWARDS ==================== -->
+    <section id="awards" class="space-y-8">
+      <div class="flex items-center gap-3 border-b border-barcaBlue/30 pb-4">
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white"><span data-i18n="awards_title_1">Thành tích &amp; Giải thưởng</span> — <span class="text-blaugrana">Honors &amp; Awards</span></h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card p-6 rounded-2xl space-y-3 border-t-2 border-t-barcaGold">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded bg-barcaGold/15 text-barcaGold text-xs font-mono font-semibold">May 2026</span>
+            <i class="fa-solid fa-trophy text-barcaGold text-lg"></i>
+          </div>
+          <h3 class="text-base font-bold text-white" data-i18n="award1_title">Consolation Prize (Giải Khuyến Khích)</h3>
+          <p class="text-xs text-blue-300 font-mono">Research Festival 2026 / Research Connect</p>
+          <p class="text-xs text-gray-400 leading-relaxed" data-i18n="award1_desc">
+            Giải thưởng nghiên cứu khoa học cấp trường do Đại học FPT Đà Nẵng tổ chức, công nhận công trình nghiên cứu ứng dụng AI vào thực tiễn.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl space-y-3 border-t-2 border-t-slate-300">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded bg-slate-400/15 text-slate-300 text-xs font-mono font-semibold">Oct 2025</span>
+            <i class="fa-solid fa-medal text-slate-300 text-lg"></i>
+          </div>
+          <h3 class="text-base font-bold text-white" data-i18n="award2_title">Second Prize (Giải Nhì)</h3>
+          <p class="text-xs text-rose-300 font-mono">Code Mosaic 2025 Hackathon</p>
+          <p class="text-xs text-gray-400 leading-relaxed" data-i18n="award2_desc">
+            Cuộc thi lập trình Hackathon thường niên về cấu trúc dữ liệu và giải thuật tại Đại học FPT Đà Nẵng.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl space-y-3 border-t-2 border-t-barcaBlue">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded bg-barcaBlue/30 text-blue-300 text-xs font-mono font-semibold">Jan 2024</span>
+            <i class="fa-solid fa-award text-blue-400 text-lg"></i>
+          </div>
+          <h3 class="text-base font-bold text-white" data-i18n="award3_title">Consolation Prize (HSG Toán)</h3>
+          <p class="text-xs text-blue-300 font-mono" data-i18n="award3_subtitle">Kỳ thi Học sinh Giỏi cấp Thành phố Đà Nẵng</p>
+          <p class="text-xs text-gray-400 leading-relaxed" data-i18n="award3_desc">
+            Kỳ thi Học sinh Giỏi môn Toán học cấp Thành phố do Sở Giáo dục &amp; Đào tạo Thành phố Đà Nẵng tổ chức.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TECH STACK SECTION ==================== -->
+    <section id="skills" class="space-y-8">
+      <div class="flex items-center gap-3 border-b border-barcaBlue/30 pb-4">
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white"><span data-i18n="skills_title_1">Kỹ năng &amp; Công nghệ</span> — <span class="text-blaugrana">Tech Stack</span></h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card p-6 rounded-2xl space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-barcaGarnet/30 text-rose-400 flex items-center justify-center font-bold">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <div>
+              <h3 class="text-sm font-bold text-white" data-i18n="skill_group1_title">AI &amp; Computer Vision</h3>
+              <span class="text-[11px] font-mono text-gray-400" data-i18n="skill_group1_sub">Core Specialization</span>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-cardBg border border-barcaBlue/40 text-gray-300">PyTorch</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-cardBg border border-barcaBlue/40 text-gray-300">TensorFlow</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-cardBg border border-barcaBlue/40 text-gray-300">OpenCV</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-cardBg border border-barcaBlue/40 text-gray-300">scikit-learn</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-barcaBlue/20 border border-barcaBlue/60 text-blue-300">U-Net</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-barcaGarnet/20 border border-barcaGarnet/60 text-rose-300">Physics-Informed DL</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-cardBg border border-barcaBlue/40 text-gray-300">YOLO</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-cardBg border border-barcaBlue/40 text-gray-300">ByteTrack</span>
+          </div>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-barcaBlue/30 text-blue-400 flex items-center justify-center font-bold">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <div>
+              <h3 class="text-sm font-bold text-white" data-i18n="skill_group2_title">Ngôn ngữ &amp; Dữ liệu</h3>
+              <span class="text-[11px] font-mono text-gray-400" data-i18n="skill_group2_sub">Languages &amp; Frameworks</span>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-cardBg border border-barcaBlue/40 text-gray-300">Python</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-cardBg border border-barcaBlue/40 text-gray-300">C / C++</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-cardBg border border-barcaBlue/40 text-gray-300">SQL</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-cardBg border border-barcaBlue/40 text-gray-300">pandas</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-cardBg border border-barcaBlue/40 text-gray-300">NumPy</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-barcaBlue/20 border border-barcaBlue/60 text-blue-300">FastAPI</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-cardBg border border-barcaBlue/40 text-gray-300">Next.js</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-cardBg border border-barcaBlue/40 text-gray-300">PostgreSQL</span>
+          </div>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-barcaGold/20 text-barcaGold flex items-center justify-center font-bold">
+              <i class="fa-solid fa-gears"></i>
+            </div>
+            <div>
+              <h3 class="text-sm font-bold text-white" data-i18n="skill_group3_title">Công cụ &amp; Hạ tầng</h3>
+              <span class="text-[11px] font-mono text-gray-400" data-i18n="skill_group3_sub">Tools &amp; Infrastructure</span>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-cardBg border border-barcaBlue/40 text-gray-300">Git &amp; GitHub</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-cardBg border border-barcaBlue/40 text-gray-300">Docker</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-cardBg border border-barcaBlue/40 text-gray-300">Linux / Ubuntu</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-cardBg border border-barcaBlue/40 text-gray-300">Jira</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-barcaGarnet/20 border border-barcaGarnet/60 text-rose-300">Qdrant</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-cardBg border border-barcaBlue/40 text-gray-300">Redis</span>
+            <span class="px-2.5 py-1 text-xs rounded-lg bg-cardBg border border-barcaBlue/40 text-gray-300">MinIO</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROJECTS SECTION ==================== -->
+    <section id="projects" class="space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-barcaBlue/30 pb-4">
+        <div class="flex items-center gap-3">
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white"><span data-i18n="proj_section_title">Dự án &amp; Nghiên cứu</span> — <span class="text-blaugrana">Verified Projects</span></h2>
+        </div>
+
+        <div class="flex items-center gap-2 overflow-x-auto pb-1" id="project-filters">
+          <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-barcaBlue text-white transition-all" data-filter="all" data-i18n="filter_all">Tất cả (4)</button>
+          <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-cardBg hover:bg-gray-800 text-gray-400 hover:text-white border border-barcaBlue/30 transition-all" data-filter="ai" data-i18n="filter_ai">AI Research (2 Papers)</button>
+          <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-cardBg hover:bg-gray-800 text-gray-400 hover:text-white border border-barcaBlue/30 transition-all" data-filter="ml" data-i18n="filter_ml">ML Systems</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="projects-grid">
+
+        <!-- Research 1 -->
+        <div class="project-card glass-card p-6 rounded-2xl flex flex-col justify-between space-y-4" data-category="ai">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono uppercase tracking-wider px-2.5 py-1 rounded bg-barcaBlue/30 text-blue-300 border border-barcaBlue/60" data-i18n="tag_accepted">Accepted Conference Paper</span>
+              <span class="text-xs text-barcaGold font-mono" data-i18n="tag_underwater">Underwater Vision</span>
+            </div>
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <span>Assessing Physics-Informed Priors in Underwater Image Restoration</span>
+            </h3>
+            <p class="text-xs text-gray-300 leading-relaxed" data-i18n="proj1_desc">
+              Nghiên cứu đánh giá các prior vật lý cho bài toán phục hồi ảnh dưới nước trên kiến trúc U-Net tùy biến. Nghiên cứu transmission map <i>t(x)</i> và backscatter map <i>B(x)</i> làm kênh bổ trợ dựa trên mô hình vật lý; benchmark trên UIEB T90 đạt <b>21.012 dB PSNR / 0.884 SSIM</b> và EUVP-Test đạt <b>26.644 dB PSNR / 0.873 SSIM</b> cho mô hình 5 kênh.
+            </p>
+          </div>
+          <div class="space-y-4 pt-2 border-t border-barcaBlue/20">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
+              <span class="px-2 py-0.5 rounded bg-cardBg border border-barcaBlue/40 text-gray-300">PyTorch</span>
+              <span class="px-2 py-0.5 rounded bg-cardBg border border-barcaBlue/40 text-gray-300">Computer Vision</span>
+              <span class="px-2 py-0.5 rounded bg-cardBg border border-barcaBlue/40 text-gray-300">Physics-Informed DL</span>
+              <span class="px-2 py-0.5 rounded bg-cardBg border border-barcaBlue/40 text-gray-300">U-Net</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs font-semibold">
+              <a href="https://github.com/heniath/underwater-image-enhancement" target="_blank" class="text-barcaGold hover:underline flex items-center gap-1">
+                <span data-i18n="btn_view_repo">Kho mã nguồn</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Research 2 -->
+        <div class="project-card glass-card p-6 rounded-2xl flex flex-col justify-between space-y-4" data-category="ai">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono uppercase tracking-wider px-2.5 py-1 rounded bg-barcaGarnet/30 text-rose-300 border border-barcaGarnet/60" data-i18n="tag_published_springer">Published (Springer MIWAI)</span>
+              <span class="text-xs text-barcaGold font-mono" data-i18n="tag_llie_role">Low-Light Enhancement • Co-Author</span>
+            </div>
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <span>HybridLLIENet: Multi-Space Luminance Prior Fusion</span>
+            </h3>
+            <p class="text-xs text-gray-300 leading-relaxed" data-i18n="proj2_desc">
+              <b>Đồng tác giả (Co-Author)</b> • Đã xuất bản tại kỷ yếu hội nghị quốc tế <i>MIWAI 2026</i> (Springer, Singapore). Tăng cường ảnh thiếu sáng bằng kỹ thuật hợp nhất prior độ sáng đa không gian màu (LAB-L, HSV-V, YCbCr-Y) kết hợp CLAHE &amp; gamma correction trên U-Net. Benchmark trên LOLv2-Real đạt <b>21.23 dB PSNR, 0.858 SSIM, 0.127 LPIPS</b> với mô hình chỉ 8.04M tham số.
+            </p>
+          </div>
+          <div class="space-y-4 pt-2 border-t border-barcaBlue/20">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
+              <span class="px-2 py-0.5 rounded bg-cardBg border border-barcaBlue/40 text-gray-300">PyTorch</span>
+              <span class="px-2 py-0.5 rounded bg-cardBg border border-barcaBlue/40 text-gray-300">U-Net</span>
+              <span class="px-2 py-0.5 rounded bg-barcaGarnet/20 border border-barcaGarnet/60 text-rose-300">Co-Author</span>
+              <span class="px-2 py-0.5 rounded bg-barcaBlue/20 border border-barcaBlue/60 text-blue-300">Springer MIWAI</span>
+            </div>
+            <div class="flex items-center gap-4 text-xs font-semibold">
+              <a href="https://github.com/huanight19RaH" target="_blank" class="text-barcaGold hover:underline flex items-center gap-1">
+                <span data-i18n="btn_view_repo">Kho mã nguồn</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
+              <span class="text-gray-500">•</span>
+              <a href="https://link.springer.com/chapter/10.1007/978-981-92-6513-8_10" target="_blank" class="text-rose-400 hover:underline flex items-center gap-1">
+                <span data-i18n="btn_springer_paper">Bài báo (Springer)</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ML System 1 -->
+        <div class="project-card glass-card p-6 rounded-2xl flex flex-col justify-between space-y-4" data-category="ml">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono uppercase tracking-wider px-2.5 py-1 rounded bg-barcaBlue/30 text-blue-300 border border-barcaBlue/60">ML Systems</span>
+              <span class="text-xs text-barcaGold font-mono" data-i18n="tag_traffic">Real-time Video</span>
+            </div>
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <span>Traffic Flow Detection — Video Analytics Platform</span>
+            </h3>
+            <p class="text-xs text-gray-300 leading-relaxed" data-i18n="proj3_desc">
+              Hệ thống phân tích video giao thông: phát hiện phương tiện (YOLO), theo dõi đa đối tượng (ByteTrack), gán làn đường và đếm phương tiện cắt vạch theo hướng di chuyển. Đảm nhiệm chính phần frontend: upload video/livestream, cấu hình ROI/vạch đếm. Benchmark UA-DETRAC đạt <b>Event F1 0.942, WAPE 5.04%</b>, batch <b>75.8 FPS</b>, live stream <b>14.9 FPS (drop rate 0%)</b>.
+            </p>
+          </div>
+          <div class="space-y-4 pt-2 border-t border-barcaBlue/20">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
+              <span class="px-2 py-0.5 rounded bg-cardBg border border-barcaBlue/40 text-gray-300">FastAPI</span>
+              <span class="px-2 py-0.5 rounded bg-cardBg border border-barcaBlue/40 text-gray-300">YOLO</span>
+              <span class="px-2 py-0.5 rounded bg-cardBg border border-barcaBlue/40 text-gray-300">ByteTrack</span>
+              <span class="px-2 py-0.5 rounded bg-cardBg border border-barcaBlue/40 text-gray-300">OpenCV</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs font-semibold">
+              <a href="https://github.com/monsierpotato/Traffic-Flow" target="_blank" class="text-barcaGold hover:underline flex items-center gap-1">
+                <span data-i18n="btn_view_repo">Kho mã nguồn</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ML System 2 -->
+        <div class="project-card glass-card p-6 rounded-2xl flex flex-col justify-between space-y-4" data-category="ml">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono uppercase tracking-wider px-2.5 py-1 rounded bg-barcaGarnet/30 text-rose-300 border border-barcaGarnet/60">RAG &amp; Microservices</span>
+              <span class="text-xs text-barcaGold font-mono">Full-Stack AI</span>
+            </div>
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <span>ScholarSummar — RAG Research Assistant</span>
+            </h3>
+            <p class="text-xs text-gray-300 leading-relaxed" data-i18n="proj4_desc">
+              Trợ lý nghiên cứu hỗ trợ quản lý tài liệu PDF khoa học, tìm kiếm lai (hybrid search) và hỏi đáp tài liệu Q&amp;A tự động. Hỗ trợ pipeline RAG (chunking, embedding, luồng truy hồi kết quả). Xây dựng frontend, test case backend và triển khai hệ thống container hóa với Docker.
+            </p>
+          </div>
+          <div class="space-y-4 pt-2 border-t border-barcaBlue/20">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
+              <span class="px-2 py-0.5 rounded bg-cardBg border border-barcaBlue/40 text-gray-300">Next.js</span>
+              <span class="px-2 py-0.5 rounded bg-cardBg border border-barcaBlue/40 text-gray-300">FastAPI</span>
+              <span class="px-2 py-0.5 rounded bg-cardBg border border-barcaBlue/40 text-gray-300">Qdrant</span>
+              <span class="px-2 py-0.5 rounded bg-cardBg border border-barcaBlue/40 text-gray-300">Docker</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs font-semibold">
+              <a href="https://github.com/quangnhat1504/SchoolSummar" target="_blank" class="text-barcaGold hover:underline flex items-center gap-1">
+                <span data-i18n="btn_view_repo">Kho mã nguồn</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center pt-4">
+        <a href="https://github.com/huanight19RaH?tab=repositories" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-cardBg hover:bg-gray-800 border border-barcaBlue/40 text-sm font-semibold text-barcaGold hover:text-white transition-all shadow-md">
+          <i class="fa-brands fa-github text-base"></i>
+          <span data-i18n="all_repos_btn">Xem tất cả kho mã nguồn trên GitHub (@huanight19RaH)</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- ==================== STATS & ACTIVITY SECTION ==================== -->
+    <section id="stats" class="space-y-8">
+      <div class="flex items-center gap-3 border-b border-barcaBlue/30 pb-4">
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white"><span data-i18n="stats_title_1">Thống kê &amp; Hoạt động</span> — <span class="text-blaugrana">Analytics &amp; Streak</span></h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card p-4 rounded-2xl flex items-center justify-center overflow-hidden">
+          <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=huanight19RaH&theme=tokyonight" alt="GitHub Stats" class="w-full h-auto rounded-xl" loading="lazy" />
+        </div>
+        <div class="glass-card p-4 rounded-2xl flex items-center justify-center overflow-hidden">
+          <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=huanight19RaH&theme=tokyonight" alt="Repos per Language" class="w-full h-auto rounded-xl" loading="lazy" />
+        </div>
+        <div class="glass-card p-4 rounded-2xl flex items-center justify-center overflow-hidden">
+          <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=huanight19RaH&theme=tokyonight" alt="Most Commit Language" class="w-full h-auto rounded-xl" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="glass-card p-4 rounded-2xl flex items-center justify-center overflow-hidden">
+          <img src="https://streak-stats.demolab.com/?user=huanight19RaH&stroke=004D98&ring=EDBB00&fire=A50044&currStreakNum=EDBB00&sideNums=ffffff&currStreakLabel=EDBB00&sideLabels=ffffff&dates=8B949E&background=080E1E&border_radius=10" alt="GitHub Streak (Blaugrana)" class="w-full h-auto rounded-xl" loading="lazy" />
+        </div>
+        <div class="glass-card p-4 rounded-2xl flex items-center justify-center overflow-hidden">
+          <a href="https://leetcode.com/u/HungNguyen192/" target="_blank" class="w-full flex justify-center">
+            <img src="https://leetcard.jacoblin.cool/HungNguyen192?theme=dark&font=Fira%20Code&ext=activity" alt="LeetCode Stats: HungNguyen192" class="w-full h-auto rounded-xl" loading="lazy" />
+          </a>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 rounded-2xl space-y-3">
+        <div class="flex items-center justify-between">
+          <h3 class="text-sm font-semibold text-white flex items-center gap-2">
+            <i class="fa-solid fa-gamepad text-barcaGold"></i>
+            <span>Snake Game Contribution Activity (Blaugrana Theme)</span>
+          </h3>
+          <span class="text-[11px] font-mono text-gray-400" data-i18n="activity_update_note">Tự động cập nhật hằng ngày qua GitHub Actions</span>
+        </div>
+        <div class="overflow-x-auto pt-2 flex justify-center">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/huanight19RaH/huanight19RaH/output/github-contribution-grid-snake-dark.svg">
+            <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/huanight19RaH/huanight19RaH/output/github-contribution-grid-snake.svg">
+            <img alt="Snake Game Contribution Graph" src="https://raw.githubusercontent.com/huanight19RaH/huanight19RaH/output/github-contribution-grid-snake-dark.svg" class="max-w-full h-auto rounded-lg" onerror="this.src='https://raw.githubusercontent.com/huanight19RaH/huanight19RaH/output/github-contribution-grid-snake.svg'" />
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONNECT SECTION ==================== -->
+    <section id="connect" class="space-y-8">
+      <div class="flex items-center gap-3 border-b border-barcaBlue/30 pb-4">
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white"><span data-i18n="connect_title_1">Liên kết &amp; Hợp tác</span> — <span class="text-blaugrana">Let's Connect</span></h2>
+      </div>
+
+      <div class="glass-card p-8 rounded-3xl relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-80 h-80 glow-blue pointer-events-none"></div>
+
+        <div class="max-w-2xl space-y-6 relative z-10">
+          <h3 class="text-xl font-bold text-white" data-i18n="connect_subheading">
+            Cùng nhau tạo ra những công trình nghiên cứu và sản phẩm công nghệ có giá trị thực tiễn
+          </h3>
+          <p class="text-sm text-gray-300 leading-relaxed" data-i18n="connect_desc">
+            Mình luôn sẵn sàng đón nhận các cơ hội nghiên cứu AI/CV, thực tập thực tế, hoặc hợp tác phát triển cộng đồng và dự án mã nguồn mở. Kết nối với mình qua các kênh bên dưới:
+          </p>
+
+          <div class="flex flex-wrap gap-4 pt-2">
+            <a href="https://www.linkedin.com/in/thai-hung-nguyen-000b24356/" target="_blank" class="px-5 py-3 rounded-xl bg-barcaBlue/30 hover:bg-barcaBlue/50 border border-barcaBlue/60 text-blue-200 hover:text-white text-xs font-semibold flex items-center gap-2 transition-all">
+              <i class="fa-brands fa-linkedin text-base text-blue-400"></i>
+              <span data-i18n="linkedin_label">LinkedIn: Nguyễn Thái Hưng</span>
+            </a>
+
+            <a href="mailto:hungnguyen.190206@gmail.com" class="px-5 py-3 rounded-xl bg-barcaGarnet/30 hover:bg-barcaGarnet/50 border border-barcaGarnet/60 text-rose-200 hover:text-white text-xs font-semibold flex items-center gap-2 transition-all">
+              <i class="fa-solid fa-envelope text-base text-rose-400"></i>
+              <span>Email: hungnguyen.190206@gmail.com</span>
+            </a>
+
+            <a href="https://www.facebook.com/thaihung.0219" target="_blank" class="px-5 py-3 rounded-xl bg-barcaBlue/30 hover:bg-barcaBlue/50 border border-barcaBlue/60 text-blue-200 hover:text-white text-xs font-semibold flex items-center gap-2 transition-all">
+              <i class="fa-brands fa-facebook text-base text-blue-400"></i>
+              <span>Facebook: Thái Hưng</span>
+            </a>
+
+            <a href="https://github.com/huanight19RaH" target="_blank" class="px-5 py-3 rounded-xl bg-cardBg hover:bg-gray-800 border border-barcaBlue/50 text-gray-200 hover:text-white text-xs font-semibold flex items-center gap-2 transition-all">
+              <i class="fa-brands fa-github text-base text-barcaGold"></i>
+              <span>GitHub: huanight19RaH</span>
+            </a>
+
+            <a href="https://leetcode.com/u/HungNguyen192/" target="_blank" class="px-5 py-3 rounded-xl bg-barcaGold/15 hover:bg-barcaGold/25 border border-barcaGold/50 text-yellow-200 hover:text-white text-xs font-semibold flex items-center gap-2 transition-all">
+              <i class="fa-solid fa-code text-base text-barcaGold"></i>
+              <span>LeetCode: HungNguyen192</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="mt-20 border-t border-barcaBlue/30 glass py-8 text-center text-xs text-gray-400 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 space-y-3">
+      <div class="flex justify-center items-center gap-6 font-mono">
+        <a href="https://github.com/huanight19RaH" target="_blank" class="hover:text-barcaGold">GitHub</a>
+        <span>•</span>
+        <a href="https://www.linkedin.com/in/thai-hung-nguyen-000b24356/" target="_blank" class="hover:text-barcaGold">LinkedIn</a>
+        <span>•</span>
+        <a href="https://leetcode.com/u/HungNguyen192/" target="_blank" class="hover:text-barcaGold">LeetCode</a>
+        <span>•</span>
+        <a href="assets/Nguyen_Thai_Hung_CV.pdf" target="_blank" class="hover:text-barcaGold">CV (PDF)</a>
+      </div>
+      <p id="footer-text">&copy; 2026 Nguyễn Thái Hưng. Phong cách cá nhân hóa Blaugrana (FC Barcelona).</p>
+      <p class="text-[11px] text-gray-500 font-mono">FPT University Da Nang • FU-DEVER Vice President</p>
+    </div>
+  </footer>
+
+  <!-- ==================== I18N DICTIONARY & SCRIPTS ==================== -->
+  <script>
+    const translations = {
+      vi: {
+        page_title: "Nguyễn Thái Hưng — AI Engineer & Computer Vision Researcher",
+        header_name: "Nguyễn Thái Hưng",
+        hero_name: "Nguyễn Thái Hưng",
+        prof_fullname_val: "Nguyễn Thái Hưng",
+        linkedin_label: "LinkedIn: Nguyễn Thái Hưng",
+        nav_role: "AI Engineer • Phó Chủ nhiệm FU-DEVER",
+        nav_about: "Về bản thân",
+        nav_awards: "Giải thưởng",
+        nav_skills: "Kỹ năng",
+        nav_projects: "Dự án & Nghiên cứu",
+        nav_stats: "Thống kê",
+        nav_connect: "Liên hệ",
+        nav_cv_btn: "Xem CV (PDF)",
+        hero_status: "Sẵn sàng đón nhận cơ hội AI Engineering & Nghiên cứu",
+        hero_greeting: "Xin chào, mình là",
+        hero_desc: "Sinh viên năm 3 chuyên ngành Trí tuệ Nhân tạo tại Đại học FPT Đà Nẵng, Phó Chủ nhiệm CLB Công nghệ FU-DEVER. Đam mê nghiên cứu Computer Vision, mô hình phục hồi ảnh kết hợp Prior vật lý, và xây dựng hệ thống Machine Learning thực tế.",
+        hero_view_projects: "Khám phá Dự án & Nghiên cứu",
+        hero_download_cv: "Tải CV (PDF)",
+        hero_contact: "Liên hệ",
+        hero_card_tag: "Nguyễn Thái Hưng • FPTU Đà Nẵng",
+        quote_text: '"Đối với tương lai, nhiệm vụ của chúng ta không phải là ngồi đoán định, mà là đánh thức và mở lối để nó có thể thành hình."',
+        quote_author: "— Antoine de Saint-Exupéry, <i>Citadelle</i> (1948)",
+        about_title_1: "Về Bản Thân",
+        about_p1: "Mình là sinh viên năm 3 chuyên ngành <b>Trí tuệ nhân tạo (AI)</b> tại <b>Đại học FPT Đà Nẵng</b>, đồng thời đảm nhiệm vị trí <b>Phó Chủ nhiệm Câu lạc bộ Công nghệ FU-DEVER</b>. Mình định hướng trở thành một <b>AI Engineer / AI Researcher</b> với trọng tâm kết hợp giữa chiều sâu nghiên cứu lý thuyết toán học/vật lý và kỹ năng kiến trúc phần mềm thực tiễn.",
+        stat_papers: "Công trình Nghiên cứu đã Accepted",
+        stat_ielts: "Chứng chỉ Tiếng Anh (2024)",
+        stat_fudever: "CLB Công nghệ FU-DEVER",
+        about_item1_title: "Học tập & Nghiên cứu Khoa học",
+        about_item1_desc: "Nghiên cứu chuyên sâu về Underwater Image Restoration, Low-Light Image Enhancement (LLIE) và Physics-Informed Deep Learning. Đã có 2 bài báo khoa học chính thức được accepted tại các hội nghị khoa học uy tín với kết quả benchmark thực tế và mã nguồn tái lập rõ ràng.",
+        about_item2_title: "Lãnh đạo & Hoạt động Xã hội",
+        about_item2_desc: "Đảm nhiệm cương vị Phó Chủ nhiệm CLB FU-DEVER — đồng hành điều hành các hoạt động học thuật, chuỗi workshop, hackathon công nghệ; đồng thời là Media Lead dự án thiện nguyện Bật Nụ Cười Lên (Sunshine Team) hỗ trợ các em nhỏ tại Làng Hy Vọng Đà Nẵng.",
+        about_item3_title: "Sở thích & Đời sống",
+        about_item3_desc: "Fan trung thành của FC Barcelona; đam mê bóng đá, bơi lội, đọc sách, nghe nhạc và chơi game rèn luyện tư duy; đạt chứng chỉ năng lực ngoại ngữ IELTS 6.0 (2024).",
+        profile_summary_title: "Hồ sơ tóm tắt",
+        prof_fullname_label: "Họ & Tên:",
+        prof_role_label: "Vị trí:",
+        prof_role_val: "Sinh viên năm 3 (AI)",
+        prof_univ_label: "Trường:",
+        prof_univ_val: "Đại học FPT Đà Nẵng",
+        prof_club_label: "Vai trò CLB:",
+        prof_club_val: "Phó Chủ nhiệm FU-DEVER",
+        prof_papers_label: "Nghiên cứu:",
+        prof_papers_val: "2 Accepted Papers",
+        prof_lang_label: "Ngoại ngữ:",
+        awards_title_1: "Thành tích & Giải thưởng",
+        award1_title: "Consolation Prize (Giải Khuyến Khích)",
+        award1_desc: "Giải thưởng nghiên cứu khoa học cấp trường do Đại học FPT Đà Nẵng tổ chức, công nhận công trình nghiên cứu ứng dụng AI vào thực tiễn.",
+        award2_title: "Second Prize (Giải Nhì)",
+        award2_desc: "Cuộc thi lập trình Hackathon thường niên về cấu trúc dữ liệu và giải thuật tại Đại học FPT Đà Nẵng.",
+        award3_title: "Consolation Prize (HSG Toán)",
+        award3_subtitle: "Kỳ thi Học sinh Giỏi cấp Thành phố Đà Nẵng",
+        award3_desc: "Kỳ thi Học sinh Giỏi môn Toán học cấp Thành phố do Sở Giáo dục & Đào tạo Thành phố Đà Nẵng tổ chức.",
+        skills_title_1: "Kỹ năng & Công nghệ",
+        skill_group1_title: "AI & Computer Vision",
+        skill_group1_sub: "Chuyên môn Cốt lõi",
+        skill_group2_title: "Ngôn ngữ & Dữ liệu",
+        skill_group2_sub: "Languages & Frameworks",
+        skill_group3_title: "Công cụ & Hạ tầng",
+        skill_group3_sub: "Tools & Infrastructure",
+        proj_section_title: "Dự án & Nghiên cứu",
+        filter_all: "Tất cả (4)",
+        filter_ai: "AI Research (2 Papers)",
+        filter_ml: "ML Systems",
+        tag_accepted: "Accepted Conference Paper",
+        tag_published_springer: "Published (Springer MIWAI)",
+        tag_underwater: "Underwater Vision",
+        tag_llie: "Low-Light Enhancement",
+        tag_llie_role: "Low-Light Enhancement • Đồng tác giả",
+        tag_traffic: "Real-time Video",
+        btn_research_details: "Kho mã nguồn",
+        btn_springer_paper: "Bài báo (Springer)",
+        btn_view_repo: "Kho mã nguồn",
+        all_repos_btn: "Xem tất cả kho mã nguồn trên GitHub (@huanight19RaH)",
+        stats_title_1: "Thống kê & Hoạt động",
+        activity_update_note: "Tự động cập nhật hằng ngày qua GitHub Actions",
+        connect_title_1: "Liên kết & Hợp tác",
+        connect_subheading: "Cùng nhau tạo ra những công trình nghiên cứu và sản phẩm công nghệ có giá trị thực tiễn",
+        connect_desc: "Mình luôn sẵn sàng đón nhận các cơ hội nghiên cứu AI/CV, thực tập thực tế, hoặc hợp tác phát triển cộng đồng và dự án mã nguồn mở. Kết nối với mình qua các kênh bên dưới:",
+        footer_copy: "© 2026 Nguyễn Thái Hưng. Phong cách cá nhân hóa Blaugrana (FC Barcelona).",
+        proj1_desc: "Nghiên cứu đánh giá các prior vật lý cho bài toán phục hồi ảnh dưới nước trên kiến trúc U-Net tùy biến. Nghiên cứu transmission map <i>t(x)</i> và backscatter map <i>B(x)</i> làm kênh bổ trợ dựa trên mô hình vật lý; benchmark trên UIEB T90 đạt <b>21.012 dB PSNR / 0.884 SSIM</b> và EUVP-Test đạt <b>26.644 dB PSNR / 0.873 SSIM</b> cho mô hình 5 kênh.",
+        proj2_desc: "<b>Đồng tác giả (Co-Author)</b> • Đã xuất bản tại kỷ yếu hội nghị quốc tế <i>MIWAI 2026</i> (Springer, Singapore). Tăng cường ảnh thiếu sáng bằng kỹ thuật hợp nhất prior độ sáng đa không gian màu (LAB-L, HSV-V, YCbCr-Y) kết hợp CLAHE & gamma correction trên U-Net. Benchmark trên LOLv2-Real đạt <b>21.23 dB PSNR, 0.858 SSIM, 0.127 LPIPS</b> với mô hình chỉ 8.04M tham số.",
+        proj3_desc: "Hệ thống phân tích video giao thông: phát hiện phương tiện (YOLO), theo dõi đa đối tượng (ByteTrack), gán làn đường và đếm phương tiện cắt vạch theo hướng di chuyển. Đảm nhiệm chính phần frontend: upload video/livestream, cấu hình ROI/vạch đếm. Benchmark UA-DETRAC đạt <b>Event F1 0.942, WAPE 5.04%</b>, batch <b>75.8 FPS</b>, live stream <b>14.9 FPS (drop rate 0%)</b>.",
+        proj4_desc: "Trợ lý nghiên cứu hỗ trợ quản lý tài liệu PDF khoa học, tìm kiếm lai (hybrid search) và hỏi đáp tài liệu Q&A tự động. Hỗ trợ pipeline RAG (chunking, embedding, luồng truy hồi kết quả). Xây dựng frontend, test case backend và triển khai hệ thống container hóa với Docker."
+      },
+      en: {
+        page_title: "Thai Hung Nguyen — AI Engineer & Computer Vision Researcher",
+        header_name: "Thai Hung Nguyen",
+        hero_name: "Thai Hung Nguyen",
+        prof_fullname_val: "Thai Hung Nguyen",
+        linkedin_label: "LinkedIn: Thai Hung Nguyen",
+        nav_role: "AI Engineer • FU-DEVER Vice President",
+        nav_about: "About",
+        nav_awards: "Honors",
+        nav_skills: "Skills",
+        nav_projects: "Projects",
+        nav_stats: "Analytics",
+        nav_connect: "Connect",
+        nav_cv_btn: "View CV (PDF)",
+        hero_status: "Open for AI Engineering & Research Opportunities",
+        hero_greeting: "Hello, I am",
+        hero_desc: "Junior Artificial Intelligence undergraduate at FPT University Da Nang, Vice President of FU-DEVER Technology Club. Passionate about Computer Vision, Physics-Informed Image Restoration, and building real-world ML Systems.",
+        hero_view_projects: "Explore Projects & Research",
+        hero_download_cv: "Download CV (PDF)",
+        hero_contact: "Let's Connect",
+        hero_card_tag: "Thai Hung Nguyen • FPTU Da Nang",
+        quote_text: '"As for the future, your task is not to foresee it, but to enable it."',
+        quote_author: "— Antoine de Saint-Exupéry, <i>Citadelle</i> (1948)",
+        about_title_1: "About Me",
+        about_p1: "I am a 3rd-year <b>Artificial Intelligence (AI)</b> student at <b>FPT University Da Nang</b> and currently serve as <b>Vice President of FU-DEVER Technology Club</b>. I aim to grow as an <b>AI Engineer / AI Researcher</b> bridging rigorous mathematical & physical priors with robust production software engineering.",
+        stat_papers: "Accepted Conference Papers",
+        stat_ielts: "English Proficiency (2024)",
+        stat_fudever: "FU-DEVER Tech Club",
+        about_item1_title: "Academic & Research",
+        about_item1_desc: "Focusing on Underwater Image Restoration, Low-Light Image Enhancement (LLIE), and Physics-Informed Deep Learning. Authored 2 accepted conference papers with rigorous benchmarks, empirical data, and open-source codebases.",
+        about_item2_title: "Leadership & Social Impact",
+        about_item2_desc: "Serving as Vice President of FU-DEVER Club — co-organizing academic workshops, mentorships, and hackathons; Media Lead for the Sunshine Team charity project supporting children at Da Nang Hope Village.",
+        about_item3_title: "Lifestyle & Interests",
+        about_item3_desc: "Die-hard FC Barcelona fan; passionate about football, swimming, reading, music, and strategic gaming; certified IELTS 6.0 (2024).",
+        profile_summary_title: "Quick Profile",
+        prof_fullname_label: "Full Name:",
+        prof_role_label: "Role:",
+        prof_role_val: "Junior AI Student",
+        prof_univ_label: "University:",
+        prof_univ_val: "FPT University Da Nang",
+        prof_club_label: "Club Role:",
+        prof_club_val: "Vice President @ FU-DEVER",
+        prof_papers_label: "Research:",
+        prof_papers_val: "2 Accepted Papers",
+        prof_lang_label: "Languages:",
+        awards_title_1: "Honors & Awards",
+        award1_title: "Consolation Prize",
+        award1_desc: "Campus-wide scientific research award organized by FPT University Da Nang, recognizing high-impact applied AI and image restoration research.",
+        award2_title: "Second Prize",
+        award2_desc: "Annual competitive programming hackathon focused on Data Structures and Algorithms at FPT University Da Nang.",
+        award3_title: "Consolation Prize (Math Contest)",
+        award3_subtitle: "Da Nang City Excellent Student Contest in Mathematics",
+        award3_desc: "City-level mathematics championship organized by the Da Nang Department of Education and Training.",
+        skills_title_1: "Tech Stack & Skills",
+        skill_group1_title: "AI & Computer Vision",
+        skill_group1_sub: "Core Specialization",
+        skill_group2_title: "Languages & Data",
+        skill_group2_sub: "Languages & Frameworks",
+        skill_group3_title: "Tools & Infrastructure",
+        skill_group3_sub: "Tools & Infrastructure",
+        proj_section_title: "Projects & Research",
+        filter_all: "All (4)",
+        filter_ai: "AI Research (2 Papers)",
+        filter_ml: "ML Systems",
+        tag_accepted: "Accepted Conference Paper",
+        tag_published_springer: "Published (Springer MIWAI)",
+        tag_underwater: "Underwater Vision",
+        tag_llie: "Low-Light Enhancement",
+        tag_llie_role: "Low-Light Enhancement • Co-Author",
+        tag_traffic: "Real-time Video",
+        btn_research_details: "Repo",
+        btn_springer_paper: "Paper (Springer)",
+        btn_view_repo: "Repo",
+        all_repos_btn: "Explore all repositories on GitHub (@huanight19RaH)",
+        stats_title_1: "GitHub Analytics & Activity",
+        activity_update_note: "Updated automatically every 12 hours via GitHub Actions",
+        connect_title_1: "Let's Connect",
+        connect_subheading: "Let's collaborate to build high-impact scientific research and real-world technology",
+        connect_desc: "I am actively exploring AI/CV research collaborations, machine learning internships, and community building initiatives. Feel free to connect with me via:",
+        footer_copy: "© 2026 Thai Hung Nguyen. Personal Blaugrana aesthetic (FC Barcelona).",
+        proj1_desc: "Investigated physical priors for underwater restoration on custom U-Net architectures. Formulated transmission map <i>t(x)</i> and backscatter map <i>B(x)</i> as auxiliary channels; empirical benchmark on UIEB T90 reached <b>21.012 dB PSNR / 0.884 SSIM</b> and EUVP-Test reached <b>26.644 dB PSNR / 0.873 SSIM</b> for the 5-channel model.",
+        proj2_desc: "<b>Co-Author</b> • Published in <i>International Conference on Multi-disciplinary Trends in Artificial Intelligence (MIWAI 2026)</i>, Springer. Low-light image enhancement via multi-space luminance prior fusion (LAB-L, HSV-V, YCbCr-Y) boosted with CLAHE and gamma correction on U-Net. Benchmark on LOLv2-Real: <b>21.23 dB PSNR, 0.858 SSIM, 0.127 LPIPS</b> with only 8.04M parameters.",
+        proj3_desc: "Real-time video analytics platform integrating YOLO detection, ByteTrack tracking, ROI lane assignment, and directional tripwire vehicle counting. Built frontend upload/livestream UI. UA-DETRAC benchmark: <b>Event F1 0.942, WAPE 5.04%</b>, batch speed <b>75.8 FPS</b>, livestream <b>14.9 FPS (0% frame drop)</b>.",
+        proj4_desc: "Intelligent scientific research assistant supporting PDF document ingestion, hybrid lexical-dense search, and conversational literature Q&A. Engineered RAG pipeline (chunking, embedding, retrieval flow), built frontend, wrote backend unit tests, and orchestrated Docker containerization."
+      }
+    };
+
+    const typingPhrases = {
+      vi: [
+        "AI Engineer tương lai",
+        "Phó Chủ nhiệm CLB Công nghệ FU-DEVER",
+        "Nghiên cứu Thị giác Máy tính & Phục hồi ảnh",
+        "Low-Light Image Enhancement (HybridLLIENet)",
+        "2 Công trình khoa học đã Accepted",
+        "Més que un builder • FC Barcelona Fan"
+      ],
+      en: [
+        "AI Engineer in the making",
+        "Vice President @ FU-DEVER Tech Club",
+        "Computer Vision & Underwater Restoration",
+        "Low-Light Image Enhancement (HybridLLIENet)",
+        "2 Accepted Conference Papers",
+        "Més que un builder • FC Barcelona Fan"
+      ]
+    };
+
+    let currentLang = localStorage.getItem('lang') || 'vi';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('lang', lang);
+      document.documentElement.lang = lang;
+
+      const t = translations[lang];
+      document.getElementById('page-title').textContent = t.page_title;
+      document.getElementById('footer-text').innerHTML = t.footer_copy;
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key]) {
+          el.innerHTML = t[key];
+        }
+      });
+
+      // Update Desktop Buttons
+      const viBtn = document.getElementById('lang-vi-btn');
+      const enBtn = document.getElementById('lang-en-btn');
+      const mobileLangBtn = document.getElementById('mobile-lang-btn');
+
+      if (lang === 'vi') {
+        viBtn.className = 'px-2.5 py-1 rounded font-semibold transition-all bg-barcaBlue text-white shadow';
+        enBtn.className = 'px-2.5 py-1 rounded font-semibold transition-all text-gray-400 hover:text-white';
+        if (mobileLangBtn) mobileLangBtn.textContent = 'VI';
+      } else {
+        enBtn.className = 'px-2.5 py-1 rounded font-semibold transition-all bg-barcaGarnet text-white shadow';
+        viBtn.className = 'px-2.5 py-1 rounded font-semibold transition-all text-gray-400 hover:text-white';
+        if (mobileLangBtn) mobileLangBtn.textContent = 'EN';
+      }
+
+      // Reset typing animation
+      phraseIndex = 0;
+      charIndex = 0;
+      isDeleting = false;
+    }
+
+    function toggleLanguage() {
+      setLanguage(currentLang === 'vi' ? 'en' : 'vi');
+    }
+
+    // Typing Animation
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typingElement = document.getElementById('typing-text');
+
+    function type() {
+      const activePhrases = typingPhrases[currentLang] || typingPhrases.vi;
+      const currentPhrase = activePhrases[phraseIndex];
+      
+      if (isDeleting) {
+        typingElement.textContent = currentPhrase.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typingElement.textContent = currentPhrase.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      let typeSpeed = isDeleting ? 28 : 55;
+      if (!isDeleting && charIndex === currentPhrase.length) {
+        typeSpeed = 2200;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % activePhrases.length;
+        typeSpeed = 400;
+      }
+
+      setTimeout(type, typeSpeed);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      setLanguage(currentLang);
+      type();
+    });
+
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Filter projects
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.className = 'filter-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-cardBg hover:bg-gray-800 text-gray-400 hover:text-white border border-barcaBlue/30 transition-all';
+        });
+        btn.className = 'filter-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-barcaBlue text-white transition-all';
+
+        const filter = btn.getAttribute('data-filter');
+        projectCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

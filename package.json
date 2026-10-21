@@ -1,0 +1,12 @@
+{
+  "name": "personal-portfolio-web",
+  "version": "1.0.0",
+  "description": "Personal Web Portfolio of Nguyen Thai Hung",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  },
+  "keywords": ["portfolio", "ai-engineer", "fpt-university", "fu-dever"],
+  "author": "Nguyen Thai Hung",
+  "license": "MIT"
+}

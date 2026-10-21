@@ -1,0 +1,16 @@
+﻿{
+  "version": 2,
+  "name": "quangnhat1504-portfolio",
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ]
+}
