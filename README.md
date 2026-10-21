@@ -1,57 +1,68 @@
-# 🌐 Personal Web Portfolio — Nguyễn Thái Hưng
+# Personal Web Portfolio — Thai Hung Nguyen
 
-Trang Web Portfolio cá nhân với thiết kế tông màu **FC Barcelona (Blaugrana 🔴🔵🟡)** hiện đại, đồng bộ phong cách và dữ liệu xác thực 100% với GitHub Profile.
+[![Live Website](https://img.shields.io/badge/Live_Site-huanight19rah.github.io-004D98?style=flat-square&logo=githubpages&logoColor=white)](https://huanight19rah.github.io/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v3.x-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![License: MIT](https://img.shields.io/badge/License-MIT-EDBB00?style=flat-square)](LICENSE)
 
----
+Personal engineering and research portfolio of **Nguyen Thai Hung** — 3rd-year Artificial Intelligence student at FPT University Da Nang and Vice President of FU-DEVER Coding Club.
 
-## ✨ Tính Năng Nổi Bật
-
-- 🎨 **Giao diện Blaugrana Độc Quyền:** Tông nền Midnight Stadium (`#080E1E`), điểm nhấn Royal Blue (`#004D98`), Garnet (`#A50044`) và Gold (`#EDBB00`) cùng hiệu ứng Glassmorphism & Ambient Glow sang trọng.
-- ⚡ **Hiệu ứng gõ chữ (Typing Animation):** Hiển thị các chức danh chuyên môn, vị trí Phó Chủ nhiệm CLB FU-DEVER và định hướng nghiên cứu mượt mà.
-- 🏆 **Phân mục Thành tích & Giải thưởng riêng biệt:** Vinh danh Giải Khuyến Khích Research Festival 2026, Giải Nhì Code Mosaic Hackathon 2025, Giải Khuyến Khích HSG Toán Đà Nẵng 2024 và 2 bài báo khoa học đã accepted.
-- 🎯 **Bộ lọc dự án thông minh (4 dự án thực tế):** Lọc theo từng nhóm lĩnh vực: *AI Research (2 Papers)*, *ML Systems*.
-- 📊 **Tích hợp thống kê trực quan:** Embed đầy đủ thẻ GitHub Stats, Top Languages, Streak Stats Blaugrana, LeetCode Stats và Snake Game Contribution Activity.
-- 📱 **Responsive 100%:** Hiển thị tối ưu và mượt mà trên cả Mobile, Tablet và Desktop.
-- 🚀 **Zero Dependency (Chạy ngay không cần cài đặt):** Mở trực tiếp file `index.html` trên bất kỳ trình duyệt nào.
+Designed with a modern FC Barcelona (Blaugrana) theme, glassmorphic UI, bilingual support (EN/VI), and verified links to accepted research papers, machine learning projects, and GitHub analytics.
 
 ---
 
-## 💻 Cách Xem Thử (Local Preview)
+## Overview
 
-### Cách 1: Mở trực tiếp (Nhanh nhất)
-Nhấp đúp chuột vào file `index.html` trong thư mục này để mở ngay trên trình duyệt (Chrome, Edge, Brave, Firefox...).
+- **Live URL**: [https://huanight19rah.github.io/](https://huanight19rah.github.io/)
+- **Theme**: FC Barcelona Blaugrana palette (Midnight Stadium `#080E1E`, Royal Blue `#004D98`, Garnet `#A50044`, Gold `#EDBB00`).
+- **Typography**: Plus Jakarta Sans (Body & Headings) and JetBrains Mono (Terminal & Code Badges).
+- **Architecture**: Zero-dependency static client with native bilingual switching and responsive layout across mobile, tablet, and desktop.
 
-### Cách 2: Chạy Local Server (Khuyên dùng)
-Nếu máy đã cài Node.js, bạn có thể chạy trong terminal:
-```bash
-npx serve .
-# Hoặc
-npm run dev
-```
-Sau đó truy cập địa chỉ hiển thị trên terminal (thường là `http://localhost:3000`).
+## Key Sections
+
+- **Hero & Identity**: Real-time typewriter header showcasing roles, research interests, and resume downloads.
+- **Academic Honors**: Consolation Prize at Research Festival 2026, Second Prize at Code Mosaic Hackathon 2025, and Da Nang City Math Competition Honors.
+- **Verified Research & Projects**:
+  - *Underwater Image Restoration* — Physics-informed priors with U-Net architecture (Accepted Conference Paper).
+  - *HybridLLIENet* — Multi-space luminance prior fusion for low-light enhancement (Published in Springer MIWAI 2026).
+  - *Traffic Flow Detection* — Real-time video analytics platform with YOLO and ByteTrack.
+  - *ScholarSummar* — Literature Q&A assistant with hybrid retrieval and RAG pipeline.
+- **Tech Stack**: AI/Computer Vision (PyTorch, TensorFlow, OpenCV, U-Net), Backend/Data (Python, C/C++, SQL, pandas, NumPy, FastAPI), and Infrastructure (Docker, Git/GitHub, Linux).
+- **Activity & Metrics**: Integrated GitHub contribution activity, streak counter, language distributions, and LeetCode benchmarks.
 
 ---
 
-## 🚀 Hướng Dẫn Deploy Lên Vercel / GitHub Pages
+<details>
+<summary><b>Tiếng Việt (Vietnamese)</b></summary>
 
-### Cách 1: Deploy lên Vercel (Miễn phí & Tự động có domain đẹp)
-1. Tạo một repository mới trên GitHub cá nhân (Ví dụ: `portfolio` hoặc `web-portfolio`).
-2. Đẩy toàn bộ nội dung thư mục `web-portfolio/` này lên repository đó:
-   ```bash
-   cd D:\THStudy\personal\web-portfolio
-   git init
-   git add .
-   git commit -m "feat: initial portfolio website"
-   git branch -M main
-   git remote add origin https://github.com/huanight19RaH/<ten-repo>.git
-   git push -u origin main
-   ```
-3. Truy cập [Vercel.com](https://vercel.com/) và đăng nhập bằng GitHub.
-4. Chọn **Add New...** -> **Project** -> Chọn repo vừa tạo và nhấn **Deploy** (File `vercel.json` đã được thiết lập sẵn, không cần cấu hình thêm gì).
-5. Vercel sẽ tự động cấp một domain miễn phí dạng `ten-ban.vercel.app` bảo mật HTTPS.
+<br>
 
-### Cách 2: Deploy lên GitHub Pages
-1. Tạo repository tên `<username>.github.io` trên GitHub (hoặc bất kỳ tên repo nào).
-2. Đẩy code lên nhánh `main`.
-3. Vào **Settings** -> **Pages** -> Tại mục **Branch**, chọn `main` / `root` -> Nhấn **Save**.
-4. Website sẽ xuất hiện trực tiếp tại `https://huanight19RaH.github.io/`.
+### Tổng quan
+
+Trang Web Portfolio cá nhân của **Nguyễn Thái Hưng** — Sinh viên năm 3 chuyên ngành Trí tuệ Nhân tạo tại Đại học FPT Đà Nẵng, Phó Chủ nhiệm CLB Lập trình FU-DEVER.
+
+- **Địa chỉ truy cập**: [https://huanight19rah.github.io/](https://huanight19rah.github.io/)
+- **Ngôn ngữ thiết kế**: Tông màu Blaugrana (FC Barcelona) hiện đại với hiệu ứng Glassmorphism & Ambient Glow.
+- **Kiểu chữ**: Plus Jakarta Sans kết hợp JetBrains Mono chuẩn tiếng Việt.
+- **Hỗ trợ song ngữ**: Chuyển đổi linh hoạt Tiếng Việt (VI) và Tiếng Anh (EN).
+
+### Nội dung chính
+
+1. **Giới thiệu**: Chức danh chuyên môn, định hướng nghiên cứu Computer Vision, liên kết mạng xã hội và tải hồ sơ năng lực (CV PDF).
+2. **Thành tích**: Giải Khuyến Khích Research Festival 2026, Giải Nhì Hackathon Code Mosaic 2025, Giải Khuyến Khích HSG Toán cấp thành phố Đà Nẵng 2024.
+3. **Dự án & Công trình Khoa học**: 2 bài báo khoa học accepted (Springer MIWAI 2026 và Underwater Image Restoration) cùng 2 hệ thống Machine Learning thực tế.
+4. **Hồ sơ kỹ năng**: PyTorch, OpenCV, Physics-Informed DL, FastAPI, Docker, C/C++, Python.
+5. **Thống kê hoạt động**: Hoạt động đóng góp GitHub, chuỗi streak, phân bố ngôn ngữ và tiến độ thuật toán LeetCode.
+
+</details>
+
+---
+
+## Author & Connect
+
+- **Name**: Nguyen Thai Hung (Thai Hung Nguyen)
+- **Role**: AI Engineering Undergraduate • Vice President @ FU-DEVER Coding Club
+- **University**: FPT University Da Nang
+- **Email**: [hungnguyen.190206@gmail.com](mailto:hungnguyen.190206@gmail.com)
+- **GitHub**: [@huanight19RaH](https://github.com/huanight19RaH)
+- **LinkedIn**: [Thai Hung Nguyen](https://www.linkedin.com/in/thai-hung-nguyen-000b24356/)
